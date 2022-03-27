@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 12px;
+    position: relative;
+}
+
+header {
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: #fff;
+    position: fixed;
+    z-index: 999;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menuItemsDiv {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    transition: opacity 0.4s;
+    background-color: black;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+}
+
+.menuItemsDiv a {
+    padding: 1rem 0;
+}
+
+.menuItemsDiv a:hover {
+    background-color: gray;
+}
+
+.menuBtn {
+    font-size: 1.5em;
+    padding: 1rem;
+}
+
+.menuBtn:hover {
+    background-color: #645d5de8;
+}
+
+.closeBtn {
+    font-size: 1.5em;
+    padding: 1rem;
+}
+
+.closeBtn:hover {
+    background-color: #887979e8;
+}
+
+.shown {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+}
+
+.logo i {
+    font-size: 2.5em;
+    padding: 1rem;
+}
+
+.logo i:hover {
+    color: #e05353;
+}
+
+.main-section {
+    min-height: 100vh;
+    padding: 7.5em 1.8em 0 1.8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.main-section .h1-myNameIs {
+    animation: loadX 1s 1;
+    display: inline-block;
+}
+
+@keyframes loadX {
+    0% {
+        transform: translateX(-30em);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes loadY {
+    0% {
+        transform: translateY(-20em);
+    }
+    75% {
+        transform: translateY(0.3em);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.main-section .h1-name {
+    color: #e05353;
+    font-size: 2.4em;
+    margin-bottom: 16px;
+    display: inline-block;
+    animation: loadY 2s 1;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+h1 {
+    font-size: 1.6em;
+}
+
+p {
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.social-icons h1 {
+    margin-bottom: 25px;
+}
+
+.social-icons i {
+    color: #000;
+    font-size: 2.5em;
+    transition: transform 0.3s;
+    margin-right: 16px;
+}
+
+.social-icons i:hover {
+    color: #e05353;
+    transform: translateY(-5px);
+}
+
+.games {
+    width: 100%;
+    background: url('images/games.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    padding: 8.5em 1.8em 1.8em 1.8em;
+    display: flex;
+    flex-direction: column;
+}
+
+.games::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(31, 31, 31, 0.6);
+    z-index: -1;
+}
+
+.icon {
+    font-size: 5em;
+    color: #e05353;
+    margin-bottom: 0.5em;
+}
+
+.section_info {
+    color: white;
+    font-size: 2em;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-around;
+    margin-top: 2em;
+}
+
+.card {
+    width: 17.9em;
+    margin: 2em 0;
+}
+
+.card img {
+    width: 100%;
+    transition: transform 0.35s;
+}
+
+.games .name {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.7s;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 700;
+    padding: 0.25em;
+    font-size: 1.3em;
+    margin-top: 0.25em;
+    transform: scale(0);
+    transition: transform 0.35s;
+}
+
+.games .card:hover .name {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.games .card:hover img {
+    transform: scale(1.1);
+}
+
+.name:hover {
+    color: #e05353;
+}
+
+.movies_TVshow {
+    width: 100%;
+    background: url('images/movies_TVshow.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    padding: 8.5em 1.8em 1.8em 1.8em;
+    display: flex;
+    flex-direction: column;
+}
+
+.movies_TVshow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(31, 31, 31, 0.6);
+    z-index: -1;
+}
+
+.movies_TVshow .info {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-15em);
+    transition: transform 0.35s, opacity 0.1s, pointer-events 11s;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.25em;
+    text-decoration: none;
+    font-size: 0.7em;
+}
+
+.movies_TVshow .categories {
+    margin: 10px 0;
+}
+
+.movies_TVshow .category {
+    display: inline-block;
+    border: 1px solid #e05353;
+    border-radius: 25px;
+    color: #000;
+    font-size: 1em;
+    font-weight: 800;
+    padding: 5px 15px;
+    margin-right: 5px;
+    transition: background-color 0.35s, transform 0.35s;
+}
+
+.movies_TVshow .category:hover {
+    background-color: #333;
+    color: #ddd;
+    transform: scale(1.1);
+}
+
+.movies_TVshow .card {
+    position: relative;
+}
+
+.card img {
+    border: 1px solid #111;
+}
+
+.movies_TVshow .card .hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.35s;
+    z-index: 1;
+}
+
+.movies_TVshow .card .hover-image:hover {
+    opacity: 1;
+}
+
+.test:hover .info {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.movies_TVshow .name {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 0.25em 0.25em 0.25em;
+    font-size: 2em;
+}
+
+@media (min-width: 522px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    .menuItemsDiv {
+        opacity: 1;
+        pointer-events: auto;
+        position: static;
+        flex-direction: row;
+    }
+    .menuItemsDiv a {
+        padding: 1rem;
+    }
+    .menuBtn {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+    }
+    .closeBtn {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px;
+    }
+}
