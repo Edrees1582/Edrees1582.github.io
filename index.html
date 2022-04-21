@@ -172,7 +172,7 @@ p {
 
 .games {
     width: 100%;
-    background: url('https://i.ibb.co/FqQ5nbW/games.jpg') no-repeat;
+    background: url('images/games.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -204,12 +204,16 @@ p {
     font-size: 2em;
 }
 
-.cards {
+.cards-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
     margin-top: 2em;
+    gap: 3em;
 }
 
 .card {
@@ -234,7 +238,7 @@ p {
     font-size: 1.3em;
     margin-top: 0.25em;
     transform: scale(0);
-    transition: transform 0.35s;
+    transition: 0.35s;
 }
 
 .games .card:hover .name {
@@ -247,13 +251,13 @@ p {
     transform: scale(1.1);
 }
 
-.name:hover {
+.games .name:hover {
     color: #e05353;
 }
 
 .movies_TVshow {
     width: 100%;
-    background: url('https://i.ibb.co/bmmp8ZP/movies-TVshow.jpg') no-repeat;
+    background: url('images/movies_TVshow.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -341,11 +345,22 @@ p {
     display: inline-block;
     padding: 0 0.25em 0.25em 0.25em;
     font-size: 2em;
+    transition: color 0.35s;
+}
+
+.movies_TVshow .name:hover {
+    color: #e05353;
 }
 
 @media (min-width: 522px) {
     body {
         font-size: 14px;
+    }
+}
+
+@media (min-width: 610px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -418,26 +433,28 @@ p {
     <section class="games" id="games">
         <i class="fas fa-headset icon"></i>
         <h1 class="section_info">Here are some of my favorite games i enjoy playing</h1>
-        <div class="cards">
-            <div class="card">
-                <img src="https://i.ibb.co/m52hBmS/valorant.jpg" alt="valorant_pic">
-                <a href="https://playvalorant.com/en-us/" target="_blank" class="name">Valorant</a>
-            </div>
-            <div class="card">
-                <img src="https://i.ibb.co/fDWqDvj/uncharted2.jpg" alt="uncharted2_pic">
-                <a href="https://uncharted.fandom.com/wiki/Uncharted_2:_Among_Thieves" target="_blank" class="name">Uncharted 2:Among Thieves</a>
-            </div>
-            <div class="card">
-                <img src="https://i.ibb.co/6HqH6Wp/new-world.jpg" alt="new_world_pic">
-                <a href="https://www.newworld.com/en-us/" target="_blank" class="name">New World</a>
-            </div>
-            <div class="card">
-                <img src="https://i.ibb.co/Dp0XDsy/heores-of-the-storm.jpg" alt="hots_pic">
-                <a href="https://heroesofthestorm.com/en-us/" target="_blank" class="name">Heroes of The Storm</a>
-            </div>
-            <div class="card">
-                <img src="https://i.ibb.co/5L5XRhJ/aqworlds.jpg" alt="aqworlds_pic">
-                <a href="https://www.aq.com" target="_blank" class="name">AQWorlds</a>
+        <div class="cards-container">
+            <div class="cards">
+                <div class="card">
+                    <img src="images/valorant.jpg" alt="valorant_pic">
+                    <a href="https://playvalorant.com/en-us/" target="_blank" class="name">Valorant</a>
+                </div>
+                <div class="card">
+                    <img src="images/uncharted2.jpg" alt="uncharted2_pic">
+                    <a href="https://uncharted.fandom.com/wiki/Uncharted_2:_Among_Thieves" target="_blank" class="name">Uncharted 2:Among Thieves</a>
+                </div>
+                <div class="card">
+                    <img src="images/new_world.jpg" alt="new_world_pic">
+                    <a href="https://www.newworld.com/en-us/" target="_blank" class="name">New World</a>
+                </div>
+                <div class="card">
+                    <img src="images/heores_of_the_storm.jpg" alt="hots_pic">
+                    <a href="https://heroesofthestorm.com/en-us/" target="_blank" class="name">Heroes of The Storm</a>
+                </div>
+                <div class="card">
+                    <img src="images/aqworlds.jpg" alt="aqworlds_pic">
+                    <a href="https://www.aq.com" target="_blank" class="name">AQWorlds</a>
+                </div>
             </div>
         </div>
     </section>
@@ -445,72 +462,74 @@ p {
     <section class="movies_TVshow" id="movies_TVshow">
         <i class="fas fa-film icon"></i>
         <h1 class="section_info">Some of movies that i think are good</h1>
-        <div class="cards">
-            <div class="card">
-                <img src="https://i.ibb.co/D9LzSSH/harry-potter.jpg" alt="harry_potter_pic" class="hover">
-                <div class="test">
-                    <img src="https://i.ibb.co/6bLV4Fr/harry-potter-hover.jpg" alt="harry_potter-hover_pic" class="hover-image">
-                    <div class="info">
-                        <a href="https://www.imdb.com/title/tt0241527/?ref_=fn_al_tt_1" target="_blank" class="name">Harry Potter</a>
-                        <div class="categories">
-                            <div class="category">Horror</div>
-                            <div class="category">Mystery</div>
-                            <div class="category">Thriller</div>
+        <div class="cards-container">
+            <div class="cards">
+                <div class="card">
+                    <img src="images/harry_potter.jpg" alt="harry_potter_pic" class="hover">
+                    <div class="test">
+                        <img src="images/harry_potter-hover.jpg" alt="harry_potter-hover_pic" class="hover-image">
+                        <div class="info">
+                            <a href="https://www.imdb.com/title/tt0241527/" target="_blank" class="name">Harry Potter</a>
+                            <div class="categories">
+                                <div class="category">Adventure</div>
+                                <div class="category">Family</div>
+                                <div class="category">Fantasy</div>
+                            </div>
+                            <p>
+                                An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.
+                            </p>
                         </div>
-                        <p>
-                            A family looks to prevent evil spirits from trapping their comatose child in a realm called The Further.
-                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="https://i.ibb.co/NnJq4Lb/fantastic-beasts.jpg" alt="fantastic_beasts_pic">
-                <div class="test">
-                    <img src="https://i.ibb.co/JqCmvC9/fantastic-beasts-hover.jpg" alt="fantastic_beasts-hover_pic" class="hover-image">
-                    <div class="info">
-                        <a href="https://www.imdb.com/title/tt3183660/" target="_blank" class="name">Fantastic Beasts</a>
-                        <div class="categories">
-                            <div class="category">Horror</div>
-                            <div class="category">Mystery</div>
-                            <div class="category">Thriller</div>
+                <div class="card">
+                    <img src="images/fantastic_beasts.jpg" alt="fantastic_beasts_pic">
+                    <div class="test">
+                        <img src="images/fantastic_beasts-hover.jpg" alt="fantastic_beasts-hover_pic" class="hover-image">
+                        <div class="info">
+                            <a href="https://www.imdb.com/title/tt3183660/" target="_blank" class="name">Fantastic Beasts</a>
+                            <div class="categories">
+                                <div class="category">Adventure</div>
+                                <div class="category">Family</div>
+                                <div class="category">Fantasy</div>
+                            </div>
+                            <p>
+                                The adventures of writer Newt Scamander in New York's secret community of witches and wizards seventy years before Harry Potter reads his book in school.
+                            </p>
                         </div>
-                        <p>
-                            A family looks to prevent evil spirits from trapping their comatose child in a realm called The Further.
-                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="https://i.ibb.co/D9Kt6Mj/insidious.jpg" alt="insidious_pic">
-                <div class="test">
-                    <img src="https://i.ibb.co/D1DX9rg/insidious-hover.jpg" alt="insidious-hover_pic" class="hover-image">
-                    <div class="info">
-                        <a href="https://www.imdb.com/title/tt1591095/" target="_blank" class="name">Insidious</a>
-                        <div class="categories">
-                            <div class="category">Horror</div>
-                            <div class="category">Mystery</div>
-                            <div class="category">Thriller</div>
+                <div class="card">
+                    <img src="images/insidious.jpg" alt="insidious_pic">
+                    <div class="test">
+                        <img src="images/insidious-hover.jpg" alt="insidious-hover_pic" class="hover-image">
+                        <div class="info">
+                            <a href="https://www.imdb.com/title/tt1591095/" target="_blank" class="name">Insidious</a>
+                            <div class="categories">
+                                <div class="category">Horror</div>
+                                <div class="category">Mystery</div>
+                                <div class="category">Thriller</div>
+                            </div>
+                            <p>
+                                A family looks to prevent evil spirits from trapping their comatose child in a realm called The Further.
+                            </p>
                         </div>
-                        <p>
-                            A family looks to prevent evil spirits from trapping their comatose child in a realm called The Further.
-                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="https://i.ibb.co/HP3588K/interstellar.jpg" alt="interstellar_pic">
-                <div class="test">
-                    <img src="https://i.ibb.co/Wzhj59B/interstellar-hover.jpg" alt="interstellar-hover_pic" class="hover-image">
-                    <div class="info">
-                        <a href="https://www.imdb.com/title/tt1591095/" target="_blank" class="name">Interstellar</a>
-                        <div class="categories">
-                            <div class="category">Horror</div>
-                            <div class="category">Mystery</div>
-                            <div class="category">Thriller</div>
+                <div class="card">
+                    <img src="images/interstellar.jpg" alt="interstellar_pic">
+                    <div class="test">
+                        <img src="images/interstellar-hover.jpg" alt="interstellar-hover_pic" class="hover-image">
+                        <div class="info">
+                            <a href="https://www.imdb.com/title/tt0816692/" target="_blank" class="name">Interstellar</a>
+                            <div class="categories">
+                                <div class="category">Adventure</div>
+                                <div class="category">Drama</div>
+                                <div class="category">Sci-Fi</div>
+                            </div>
+                            <p>
+                                A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.
+                            </p>
                         </div>
-                        <p>
-                            A family looks to prevent evil spirits from trapping their comatose child in a realm called The Further.
-                        </p>
                     </div>
                 </div>
             </div>
